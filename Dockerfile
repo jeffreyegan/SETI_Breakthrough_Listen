@@ -2,8 +2,6 @@
 
 FROM nvidia/cuda:11.2.2-devel-ubuntu20.04
 
-COPY ["SETI_Breakthrough_Listen_Pytorch.ipynb", "images", "./project/"]
-
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     python3-dev \
@@ -19,7 +17,5 @@ RUN pip3 install --no-cache-dir "cupy-cuda112==8.6.0" \
     numba numpy scipy torch opencv-python-headless jupyter fastai tqdm timm pandas sklearn
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
-
-ENV PYTHONPATH /usr/local/lib/python3.8/dist-packages/
 
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
