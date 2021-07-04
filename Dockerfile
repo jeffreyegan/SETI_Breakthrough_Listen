@@ -1,6 +1,6 @@
-# SETI Breakthrough Listen Container 
-
 FROM nvidia/cuda:11.2.2-devel-ubuntu20.04
+LABEL description="SETI Breakthrough Listen Pytorch CNN Container"
+LABEL version="0.1.0"
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -18,4 +18,5 @@ RUN pip3 install --no-cache-dir "cupy-cuda112==8.6.0" \
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+WORKDIR /SETI
+CMD ["python", "seti_bl_pytorch_cnn.py"]
