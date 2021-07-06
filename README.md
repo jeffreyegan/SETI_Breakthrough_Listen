@@ -1,5 +1,5 @@
 # SETI_Breakthrough_Listen
-An entry in a Kaggle AI/ML competition to find extraterrestrial signals in data from deep space.
+An entry in a Kaggle AI/ML competition to find extraterrestrial technosignatures in spectrogram data from deep space observations using radio telescopes.
 
 
 
